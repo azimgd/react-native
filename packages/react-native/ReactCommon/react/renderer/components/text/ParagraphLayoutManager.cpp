@@ -60,12 +60,13 @@ TextMeasurement ParagraphLayoutManager::measure(
   }
 }
 
-LinesMeasurements ParagraphLayoutManager::measureLines(
+SegmentedMeasurements ParagraphLayoutManager::measureLines(
     AttributedString const &attributedString,
     ParagraphAttributes const &paragraphAttributes,
-    Size size) const {
+    Size size,
+    std::vector<int> textLayoutConfig) const {
   return textLayoutManager_->measureLines(
-      attributedString, paragraphAttributes, size);
+      attributedString, paragraphAttributes, size, textLayoutConfig);
 }
 
 void ParagraphLayoutManager::setTextLayoutManager(
