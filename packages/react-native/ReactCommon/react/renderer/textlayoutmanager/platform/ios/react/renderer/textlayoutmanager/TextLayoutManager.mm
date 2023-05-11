@@ -109,10 +109,10 @@ SegmentedMeasurements TextLayoutManager::measureLines(
     AttributedString attributedString,
     ParagraphAttributes paragraphAttributes,
     Size size,
-    std::vector<int> textLayoutConfig) const
+    std::vector<int> textLayoutRegions) const
 {
   id chunks = [NSMutableArray new];
-  std::for_each(textLayoutConfig.begin(), textLayoutConfig.end(), ^(int chunk) {
+  std::for_each(textLayoutRegions.begin(), textLayoutRegions.end(), ^(int chunk) {
     id region = [NSNumber numberWithInteger:chunk];
     [chunks addObject:region];
   });
@@ -121,7 +121,7 @@ SegmentedMeasurements TextLayoutManager::measureLines(
   return [textLayoutManager getLinesForAttributedString:attributedString
                                     paragraphAttributes:paragraphAttributes
                                                    size:{size.width, size.height}
-                                       textLayoutConfig:chunks];
+                                       textLayoutRegions:chunks];
 }
 
 } // namespace react

@@ -44,7 +44,7 @@ class TextLayoutManager {
       AttributedString attributedString,
       ParagraphAttributes paragraphAttributes,
       Size size,
-      std::vector<int> textLayoutConfig) const;
+      std::vector<int> textLayoutRegions) const;
 
   std::shared_ptr<void> getHostTextStorage(
       AttributedString attributedString,
