@@ -41,7 +41,7 @@ struct LineMeasurement {
 using LinesMeasurements = std::vector<LineMeasurement>;
 using RegionsMeasurements = std::vector<float>;
 
-struct SegmentedMeasurements {
+struct TextLayoutMeasurements {
   LinesMeasurements linesMeasurements;
   RegionsMeasurements regionsMeasurements;
 };
