@@ -40,7 +40,7 @@ class TextLayoutManager {
    * Measures lines of `attributedString` using native text rendering
    * infrastructure.
    */
-  SegmentedMeasurements measureLines(
+  TextLayoutMeasurements measureLines(
       AttributedString attributedString,
       ParagraphAttributes paragraphAttributes,
       Size size,

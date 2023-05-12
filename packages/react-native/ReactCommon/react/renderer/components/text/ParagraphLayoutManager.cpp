@@ -60,7 +60,7 @@ TextMeasurement ParagraphLayoutManager::measure(
   }
 }
 
-SegmentedMeasurements ParagraphLayoutManager::measureLines(
+TextLayoutMeasurements ParagraphLayoutManager::measureLines(
     AttributedString const &attributedString,
     ParagraphAttributes const &paragraphAttributes,
     Size size,
