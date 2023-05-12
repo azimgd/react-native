@@ -64,7 +64,7 @@ TextLayoutMeasurements ParagraphLayoutManager::measureLines(
     AttributedString const &attributedString,
     ParagraphAttributes const &paragraphAttributes,
     Size size,
-    std::vector<int> textLayoutRegions) const {
+    TextLayoutRegions textLayoutRegions) const {
   return textLayoutManager_->measureLines(
       attributedString, paragraphAttributes, size, textLayoutRegions);
 }
