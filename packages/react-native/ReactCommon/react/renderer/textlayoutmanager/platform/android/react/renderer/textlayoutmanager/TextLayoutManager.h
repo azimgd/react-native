@@ -67,10 +67,11 @@ class TextLayoutManager {
    * Measures lines of `attributedString` using native text rendering
    * infrastructure.
    */
-  LinesMeasurements measureLines(
+  TextLayoutMeasurements measureLines(
       AttributedString const &attributedString,
       ParagraphAttributes const &paragraphAttributes,
-      Size size) const;
+      Size size,
+      TextLayoutRegions textLayoutRegions) const;
 
   /*
    * Returns an opaque pointer to platform-specific TextLayoutManager.
@@ -89,10 +90,11 @@ class TextLayoutManager {
       ParagraphAttributes const &paragraphAttributes,
       LayoutConstraints layoutConstraints) const;
 
-  LinesMeasurements measureLinesMapBuffer(
+  TextLayoutMeasurements measureLinesMapBuffer(
       AttributedString const &attributedString,
       ParagraphAttributes const &paragraphAttributes,
-      Size size) const;
+      Size size,
+      TextLayoutRegions textLayoutRegions) const;
 
   void *self_{};
   ContextContainer::Shared contextContainer_;
