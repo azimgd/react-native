@@ -14,6 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 NSString *const RCTAttributedStringIsHighlightedAttributeName = @"IsHighlighted";
+NSString *const RCTAttributedStringFillLineGapAttributeName = @"FillLineGap";
 NSString *const RCTAttributedStringEventEmitterKey = @"EventEmitter";
 
 // String representation of either `role` or `accessibilityRole`

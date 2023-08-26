@@ -888,6 +888,10 @@ inline folly::dynamic toDynamic(const TextAttributes &textAttributes) {
     _textAttributes(
         "layoutDirection", toString(*textAttributes.layoutDirection));
   }
+  if (textAttributes.fillLineGap.has_value()) {
+    _textAttributes(
+        "fillLineGap", *textAttributes.fillLineGap);
+  }
   if (textAttributes.accessibilityRole.has_value()) {
     _textAttributes(
         "accessibilityRole", toString(*textAttributes.accessibilityRole));
@@ -1116,6 +1120,10 @@ inline MapBuffer toMapBuffer(const TextAttributes &textAttributes) {
   if (textAttributes.layoutDirection.has_value()) {
     builder.putString(
         TA_KEY_LAYOUT_DIRECTION, toString(*textAttributes.layoutDirection));
+  }
+  if (textAttributes.fillLineGap.has_value()) {
+    builder.putBool(
+        TA_KEY_FILL_LINE_GAP, *textAttributes.fillLineGap);
   }
   if (textAttributes.accessibilityRole.has_value()) {
     builder.putString(

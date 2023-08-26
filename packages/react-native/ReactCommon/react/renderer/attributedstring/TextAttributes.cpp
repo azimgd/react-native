@@ -101,6 +101,9 @@ void TextAttributes::apply(TextAttributes textAttributes) {
   accessibilityRole = textAttributes.accessibilityRole.has_value()
       ? textAttributes.accessibilityRole
       : accessibilityRole;
+  fillLineGap = textAttributes.fillLineGap.has_value()
+      ? textAttributes.fillLineGap
+      : fillLineGap;
   role = textAttributes.role.has_value() ? textAttributes.role : role;
 }
 
@@ -125,6 +128,7 @@ bool TextAttributes::operator==(const TextAttributes &rhs) const {
              textShadowOffset,
              textShadowColor,
              isHighlighted,
+             fillLineGap,
              layoutDirection,
              accessibilityRole,
              role,
@@ -147,6 +151,7 @@ bool TextAttributes::operator==(const TextAttributes &rhs) const {
              rhs.textShadowOffset,
              rhs.textShadowColor,
              rhs.isHighlighted,
+             rhs.fillLineGap,
              rhs.layoutDirection,
              rhs.accessibilityRole,
              rhs.role,
@@ -216,6 +221,7 @@ SharedDebugStringConvertibleList TextAttributes::getDebugProps() const {
 
       // Special
       debugStringConvertibleItem("isHighlighted", isHighlighted),
+      debugStringConvertibleItem("fillLineGap", fillLineGap),
       debugStringConvertibleItem("layoutDirection", layoutDirection),
       debugStringConvertibleItem("accessibilityRole", accessibilityRole),
       debugStringConvertibleItem("role", role),

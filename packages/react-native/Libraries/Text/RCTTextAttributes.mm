@@ -13,6 +13,7 @@
 
 NSString *const RCTTextAttributesIsHighlightedAttributeName = @"RCTTextAttributesIsHighlightedAttributeName";
 NSString *const RCTTextAttributesTagAttributeName = @"RCTTextAttributesTagAttributeName";
+NSString *const RCTTextAttributesFillLineGapAttributeName = @"RCTTextAttributesFillLineGapAttributeName";
 
 @implementation RCTTextAttributes
 
@@ -89,12 +90,18 @@ NSString *const RCTTextAttributesTagAttributeName = @"RCTTextAttributesTagAttrib
 
   // Special
   _isHighlighted = textAttributes->_isHighlighted || _isHighlighted; // *
+  _fillLineGap = textAttributes->_fillLineGap || _fillLineGap;
   _tag = textAttributes->_tag ?: _tag;
   _layoutDirection = textAttributes->_layoutDirection != UIUserInterfaceLayoutDirectionLeftToRight
       ? textAttributes->_layoutDirection
       : _layoutDirection;
   _textTransform =
       textAttributes->_textTransform != RCTTextTransformUndefined ? textAttributes->_textTransform : _textTransform;
+}
+
+- (BOOL)fillLineGap
+{
+  return _fillLineGap;
 }
 
 - (NSParagraphStyle *)effectiveParagraphStyle
@@ -205,6 +212,10 @@ NSString *const RCTTextAttributesTagAttributeName = @"RCTTextAttributesTagAttrib
   // Special
   if (_isHighlighted) {
     attributes[RCTTextAttributesIsHighlightedAttributeName] = @YES;
+  }
+
+  if (!_fillLineGap) {
+    attributes[RCTTextAttributesFillLineGapAttributeName] = @NO;
   }
 
   if (_tag) {
@@ -344,6 +355,7 @@ static NSString *capitalizeText(NSString *text)
       RCTTextAttributesCompareObjects(_textShadowColor) &&
       // Special
       RCTTextAttributesCompareOthers(_isHighlighted) && RCTTextAttributesCompareObjects(_tag) &&
+      RCTTextAttributesCompareOthers(_fillLineGap) &&
       RCTTextAttributesCompareOthers(_layoutDirection) && RCTTextAttributesCompareOthers(_textTransform);
 }
 

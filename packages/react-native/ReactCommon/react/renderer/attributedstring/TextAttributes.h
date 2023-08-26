@@ -74,6 +74,7 @@ class TextAttributes : public DebugStringConvertible {
 
   // Special
   std::optional<bool> isHighlighted{};
+  std::optional<bool> fillLineGap{};
 
   // TODO T59221129: document where this value comes from and how it is set.
   // It's not clear if this is being used properly, or if it's being set at all.
@@ -132,6 +133,7 @@ struct hash<facebook::react::TextAttributes> {
         textAttributes.textShadowRadius,
         textAttributes.textShadowColor,
         textAttributes.isHighlighted,
+        textAttributes.fillLineGap,
         textAttributes.layoutDirection,
         textAttributes.accessibilityRole,
         textAttributes.role);
