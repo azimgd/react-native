@@ -30,6 +30,7 @@ type NativeTextProps = $ReadOnly<{
 const textViewConfig = {
   validAttributes: {
     isHighlighted: true,
+    fillLineGap: true,
     isPressable: true,
     numberOfLines: true,
     ellipsizeMode: true,
@@ -62,6 +63,7 @@ const textViewConfig = {
 const virtualTextViewConfig = {
   validAttributes: {
     isHighlighted: true,
+    fillLineGap: true,
     isPressable: true,
     maxFontSizeMultiplier: true,
   },

@@ -10,6 +10,7 @@
 
 'use strict';
 
+import { boolean } from 'yargs';
 import type {
   AccessibilityActionEvent,
   AccessibilityActionInfo,
@@ -265,4 +266,9 @@ export type TextProps = $ReadOnly<{|
    * See https://reactnative.dev/docs/text.html#linebreakstrategyios
    */
   lineBreakStrategyIOS?: ?('none' | 'standard' | 'hangul-word' | 'push-out'),
+
+  /**
+   * Allows to control the application of background between successive line areas.
+   */
+  fillLineGap?: ?boolean,
 |}>;
