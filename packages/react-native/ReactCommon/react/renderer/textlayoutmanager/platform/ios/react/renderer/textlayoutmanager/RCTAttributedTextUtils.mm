@@ -288,8 +288,8 @@ NSDictionary<NSAttributedStringKey, id> *RCTNSTextAttributesFromTextAttributes(T
   if (textAttributes.isHighlighted) {
     attributes[RCTAttributedStringIsHighlightedAttributeName] = @YES;
   }
-  if (!textAttributes.fillLineGap) {
-    attributes[RCTAttributedStringFillLineGapAttributeName] = @NO;
+  if (textAttributes.fillLineGap) {
+    attributes[RCTAttributedStringFillLineGapAttributeName] = @YES;
   }
 
   if (textAttributes.role.has_value()) {

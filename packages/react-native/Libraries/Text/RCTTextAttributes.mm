@@ -214,8 +214,8 @@ NSString *const RCTTextAttributesFillLineGapAttributeName = @"RCTTextAttributesF
     attributes[RCTTextAttributesIsHighlightedAttributeName] = @YES;
   }
 
-  if (!_fillLineGap) {
-    attributes[RCTTextAttributesFillLineGapAttributeName] = @NO;
+  if (_fillLineGap) {
+    attributes[RCTTextAttributesFillLineGapAttributeName] = @YES;
   }
 
   if (_tag) {
