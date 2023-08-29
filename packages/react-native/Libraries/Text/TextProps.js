@@ -10,7 +10,6 @@
 
 'use strict';
 
-import { boolean } from 'yargs';
 import type {
   AccessibilityActionEvent,
   AccessibilityActionInfo,
